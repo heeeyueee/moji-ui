@@ -1,15 +1,14 @@
 <template>
   <div>hi</div>
-  <Mojii/>
+  <router-view></router-view>
 </template>
 
 <script>
-import Mojii from './components/Mojii.vue'
 
 export default {
   name: 'App',
   components: {
-    Mojii
+   
   }
 }
 </script>
