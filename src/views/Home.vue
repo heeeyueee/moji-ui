@@ -1,10 +1,7 @@
 <!-- 组件说明 -->
 <template>
     <div class=''>
-        <div class="topnav">
-            <div class="logo"></div>
-            <div class="muen"></div>
-        </div>
+        <Topnav/>
         <div class="banner">
             <h1>moji-ui</h1>
             <h2>一个UI框架</h2>
@@ -17,10 +14,11 @@
     </div>
 </template>
 
-<script>
-    //import x from ''
+<script lang="ts">
+    import Topnav from '../components/Topnav.vue'
     export default {
         components: {
+            Topnav
 
         },
         data () {
