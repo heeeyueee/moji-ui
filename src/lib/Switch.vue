@@ -1,7 +1,7 @@
 <!-- 组件说明 -->
 <template>
     <div class=''>
-        <button :class="{checked:value}" @click="toggle"><span></span></button>
+        <button class="moji-switch" :class="{'moji-checked':value}" @click="toggle"><span></span></button>
     </div>
 </template>
 
@@ -34,14 +34,14 @@ import { ref } from 'vue';
     }
 </script>
 
-<style lang='scss' scoped>
+<style lang='scss'>
 //@import url()
 @mixin borderTest{
     border:1px red solid;
 }
 $h:22px;
 $h2:$h - 4px;
-button{
+.moji-switch{
     border:none;
     height: $h;
     width:$h*2;
@@ -58,11 +58,11 @@ button{
     background-color: white;
     transition: all 250ms;
 }
-&.checked{
+&.moji-checked{
     background: #1890ff;
 
 }
-&.checked >span{
+&.moji-checked >span{
     left:calc(100% - #{$h2} - 2px);
 }
 &:focus{
@@ -71,7 +71,7 @@ button{
 &:active{
     > span {width: $h2 + 4px;}
   }
-&.checked:active{
+&.moji-checked:active{
     > span {width: $h2 + 4px; margin-left: -4px;}
   }
 }
