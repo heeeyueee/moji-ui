@@ -1,21 +1,14 @@
 <!-- 组件说明 -->
 <template>
     <div class=''>
-        <h3>示例1</h3>
-        <Tabs>
-            <Tab title="one"></Tab>
-            <Tab title="two"></Tab>
-        </Tabs>
+        Tab组件
     </div>
 </template>
 
 <script lang="ts">
-    import Tab from "../lib/Tab.vue"
-    import Tabs from "../lib/Tabs.vue"
+    //import x from ''
     export default {
         components: {
-            Tab,
-            Tabs
 
         },
         data () {
