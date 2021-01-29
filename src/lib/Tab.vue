@@ -1,7 +1,7 @@
 <!-- 组件说明 -->
 <template>
     <div class=''>
-        Tab组件
+        <slot></slot>
     </div>
 </template>
 
