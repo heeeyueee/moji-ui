@@ -1,57 +1,50 @@
 <!-- 组件说明 -->
 <template>
-    <div class="layout">
-        <Topnav class="nav" />
-        <div class="content">
-            <aside v-if="menuVisible">
-                <h2>组件列表</h2>
-                <ol>
-                    <li>
-                        <router-link to="/doc/switch">Switch 组件</router-link>
-                    </li>
-                    <li>
-                        <router-link to="/doc/button">Button 组件</router-link>
-                    </li>
-                    <li>
-                        <router-link to="/doc/dialog">Dialog 组件</router-link>
-                    </li>
-                    <li>
-                        <router-link to="/doc/tabs">Tabs 组件</router-link>
-                    </li>
-                </ol>
-            </aside>
-            <main>
-                <router-view/>
-            </main>
-        </div>
+  <div class="layout">
+    <Topnav toggleMenuButtonVisible class="nav" />
+    <div class="content">
+      <aside v-if="menuVisible">
+        <h2>组件列表</h2>
+        <ol>
+          <li>
+            <router-link to="/doc/switch">Switch 组件</router-link>
+          </li>
+          <li>
+            <router-link to="/doc/button">Button 组件</router-link>
+          </li>
+          <li>
+            <router-link to="/doc/dialog">Dialog 组件</router-link>
+          </li>
+          <li>
+            <router-link to="/doc/tabs">Tabs 组件</router-link>
+          </li>
+        </ol>
+      </aside>
+      <main>
+        <router-view />
+      </main>
     </div>
+  </div>
 </template>
 
 <script lang="ts">
-import { inject, Ref } from 'vue';
-    import Topnav from '../components/Topnav.vue'
-    export default {
-        setup(){
-            const menuVisible=inject<Ref<boolean>>('menuVisible')
-            console.log(`Doc获取到的menuvisble:${menuVisible.value}`);
-            return {menuVisible}
-        },
-        components: {
-            Topnav
-
-        },
-        data () {
-            return {
-
-            };
-        },
-        computed: {
-
-        },
-        methods: {
-
-        },
-    }
+import { inject, Ref } from "vue";
+import Topnav from "../components/Topnav.vue";
+export default {
+  setup() {
+    const menuVisible = inject<Ref<boolean>>("menuVisible");
+    console.log(`Doc获取到的menuvisble:${menuVisible.value}`);
+    return { menuVisible };
+  },
+  components: {
+    Topnav,
+  },
+  data() {
+    return {};
+  },
+  computed: {},
+  methods: {},
+};
 </script>
 
 <style lang="scss" scoped>
@@ -67,7 +60,7 @@ import { inject, Ref } from 'vue';
     padding-top: 60px;
     padding-left: 156px;
     @media (max-width: 500px) {
-      padding-left: 0; 
+      padding-left: 0;
     }
   }
 }
@@ -103,5 +96,4 @@ aside {
 main {
   overflow: auto;
 }
-
 </style>
