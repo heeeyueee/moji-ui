@@ -1,31 +1,22 @@
 <!-- 组件说明 -->
 <template>
-    <div class=''>
-        介绍
-    </div>
+   <article class="markdown-body" v-html="md"></article>
 </template>
 
-<script>
-    //import x from ''
-    export default {
-        components: {
-
-        },
-        data () {
-            return {
-
-            };
-        },
-        computed: {
-
-        },
-        methods: {
-
-        },
-    }
+<script >
+import md from "../markdown/intro.md";
+export default {
+  components: {},
+  data() {
+    return {
+      md,
+    };
+  },
+  computed: {},
+  methods: {},
+};
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 //@import url()
-
 </style>

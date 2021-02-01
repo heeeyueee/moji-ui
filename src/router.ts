@@ -7,9 +7,8 @@ import TabsDemo from './components/TabsDemo.vue';
 import Intro from './views/Intro.vue';
 import Install from './views/Install.vue';
 import GetStarted from './views/GetStarted.vue';
-
-
 import {createWebHashHistory,createRouter} from "vue-router"
+
 const history=createWebHashHistory()
 export const router=createRouter({
     history:history,

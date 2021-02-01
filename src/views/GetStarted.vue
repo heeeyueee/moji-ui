@@ -1,14 +1,16 @@
 <!-- 组件说明 -->
 <template>
-  <div class="">开始</div>
+  <article class="markdown-body" v-html="md"></article>
 </template>
 
 <script>
-//import x from ''
+import md from "../markdown/get-started.md";
 export default {
   components: {},
   data() {
-    return {};
+    return {
+      md,
+    };
   },
   computed: {},
   methods: {},
