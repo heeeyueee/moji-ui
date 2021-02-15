@@ -1,44 +1,20 @@
-<!-- 组件说明 -->
+
 <template>
-    <div class=''>
-        <h3>示例1</h3>
-        <Tabs v-model:selected="selectedTitle">
-            <Tab title="导航一">内容一</Tab>
-            <Tab title="导航二">内容二</Tab>
-        </Tabs>
-    </div>
+<h1>Tabs 示例</h1>
+<Demo :component="Tabs1Demo" />
 </template>
 
 <script lang="ts">
-import { ref } from 'vue'
-    import Tab from "../lib/Tab.vue"
-    import Tabs from "../lib/Tabs.vue"
-    export default {
-        components: {
-            Tab,
-            Tabs
-
-        },
-        setup(){
-            const selectedTitle=ref("导航一")
-            return {selectedTitle}
-
-        },
-        data () {
-            return {
-
-            };
-        },
-        computed: {
-
-        },
-        methods: {
-
-        },
+import Demo from './Demo.vue'
+import Tabs1Demo from './Tabs1.demo.vue'
+export default {
+  components: {
+    Demo
+  },
+  setup() {
+    return {
+      Tabs1Demo
     }
+  }
+}
 </script>
-
-<style lang='scss' scoped>
-//@import url()
-
-</style>
