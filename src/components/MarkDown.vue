@@ -13,6 +13,7 @@ export default {
   },
   setup(props) {
     const content = ref(null);
+    //import异步请求到了资源
     import(props.path).then((result) => {
       content.value = result.default;
     });
