@@ -20,13 +20,13 @@
     </div>
     <div class="moji-tabs-content">
       <!-- <component class="moji-tabs-content-item" v-for="(c,index) in defaults" :is="c" :key="index" /> -->
-      <component class="moji-tabs-content-item" :is="current" :key="selected" />
+      <component class="moji-tabs-content-item" :is="current" :key="current.props.title" />
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { computed, onMounted, ref, onUpdated, watchEffect } from "vue";
+import { computed, onMounted, ref, watchEffect,onUpdated } from "vue";
 import Tab from "../lib/Tab.vue";
 export default {
   props: {
@@ -36,23 +36,22 @@ export default {
   },
   components: {},
   setup(props, context) {
-    const defaults = context.slots.default();
+    
     const selectedItem = ref<HTMLDivElement>(null);
     const indicator = ref<HTMLDivElement>(null);
     const container = ref<HTMLDivElement>(null);
-    onMounted(() => {
-      watchEffect(() => {
+    const tabMove = () => {
         const { width } = selectedItem.value.getBoundingClientRect();
         indicator.value.style.width = width + "px";
         const { left: left1 } = selectedItem.value.getBoundingClientRect();
         const { left: left2 } = container.value.getBoundingClientRect();
         const left = left1 - left2;
         indicator.value.style.left = left + "px";
-      });
-    });
-    //onMounted(tabMove)//第一次渲染
-    //onUpdated(tabMove)//后面的更新渲染
+      }
+    onMounted(tabMove)//第一次渲染
+    onUpdated(tabMove)//后面的更新渲染
     //watchEffect(tabMove)   会在Mounted和Updated之后都执行
+    const defaults = context.slots.default();
     defaults.forEach((component) => {
       if (component.type !== Tab) {
         throw new Error("子标签错误");
@@ -78,10 +77,7 @@ export default {
       indicator,
       selectedItem,
     };
-  },
-  data() {
-    return {};
-  },
+  }
 };
 </script>
 
