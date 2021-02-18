@@ -6,20 +6,12 @@
 import { ref } from "vue";
 export default {
   props: {
-    path: {
+    content: { 
       type: String,
       required: true,
     },
   },
-  setup(props) {
-    const content = ref(null);
-    //import异步请求到了资源
-    import(props.path).then((result) => {
-      content.value = result.default;
-    });
-    return {
-      content,
-    };
-  },
+
+ 
 };
 </script>
