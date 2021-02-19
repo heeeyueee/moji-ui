@@ -1,4 +1,3 @@
-<!-- 组件说明 -->
 <template>
   <div class="moji-tabs">
     <div class="moji-tabs-nav" ref="container">

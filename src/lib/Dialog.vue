@@ -1,4 +1,3 @@
-<!-- 组件说明 -->
 <template>
      <template v-if="visible"> 
         <Teleport to="body">

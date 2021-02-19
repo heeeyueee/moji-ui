@@ -1,4 +1,3 @@
-<!-- 组件说明 -->
 <template>
 <div>
   <slot/>
