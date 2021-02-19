@@ -1,8 +1,7 @@
-<!-- 组件说明 -->
 <template>
-    <div class=''>
-        <button class="moji-switch" :class="{'moji-checked':value}" @click="toggle"><span></span></button>
-    </div>
+  <button class="moji-switch" @click="toggle" :class="{'moji-checked':value}">
+    <span></span>
+  </button>
 </template>
 
 <script lang="ts">

@@ -1,11 +1,9 @@
-<!-- 组件说明 -->
-<template> 
-    <button class="moji-button" :class="classes" :disabled="disabled">
-         <span v-if="loading" class="moji-loadingIndicator"></span>
-        <slot></slot>
-    </button> 
+<template>
+  <button class="moji-button" :class="classes" :disabled="disabled">
+    <span v-if="loading" class="moji-loadingIndicator"></span>
+    <slot />
+  </button>
 </template>
-
 <script lang="ts">
 import { computed } from 'vue';
     //import x from ''

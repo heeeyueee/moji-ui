@@ -1,8 +1,8 @@
 <!-- 组件说明 -->
 <template>
-    <div class=''>
-        <slot></slot>
-    </div>
+<div>
+  <slot/>
+</div>
 </template>
 
 <script lang="ts">
