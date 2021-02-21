@@ -49,8 +49,8 @@ import Button from '../lib/Button.vue';
                 }
             }
             const ok = () => {
-                if (props.ok?.()!=false) {
-                    //(props.ok && props.ok()!==false)
+                if (props.ok && props.ok()!==false) {
+                    
                     close()
                 }
             
