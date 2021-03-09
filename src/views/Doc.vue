@@ -62,7 +62,7 @@ export default {
 <style lang="scss" scoped>
 $aside-index : 10;
 .router-link-active {
-  text-decoration: underline;
+  border-right: 3px solid;
 }
 .layout {
   display: flex;
@@ -84,32 +84,43 @@ $aside-index : 10;
   display: flex;
   > aside {
     flex-shrink: 0;
+    min-width: 200px;
+
   }
   > main {
+    color: #283e70;
     flex-grow: 1;
-    padding: 16px;
-    background: white;
+    // padding: 16px;
+    // background: white;
+    margin-top:20px;
+    margin-left: 55px;
+    border: 1px solid #f5f5f5;
+    width: 85vw;
+    padding: 10px;
+    background: #f5f5f5;
+    border-radius: 5px;
   }
 }
 aside {
-  background: lightblue;
-  width: 150px;
+  background: #d5f7ff;
+  color: #283e70;
+  width: 190px;
   padding: 16px 0;
   position: fixed;
   top: 0;
   left: 0;
-  padding-top: 70px;
+  padding-top: 85px;
   height: 100%;
   z-index: $aside-index;
   > h2 {
     margin-bottom: 4px;
-    padding: 0 16px;
+    padding-left: 16px;
   }
   > ol {
     > li {
       > a {
         display: block;
-        padding: 4px 16px;
+        padding: 10px 30px;
         text-decoration: none;
       }
       .router-link-active {
@@ -120,5 +131,14 @@ aside {
 }
 main {
   overflow: auto;
+}
+@media (max-width: 500px) {
+  .content {
+    >main{
+      width: 90vw;
+      margin-left: 0px;
+    }
+  }
+
 }
 </style>

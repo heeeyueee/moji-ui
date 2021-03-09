@@ -7,7 +7,7 @@
       <div class="pore pore-03"></div>
       <div class="pore pore-04"></div>
       <div class="pore pore-05"></div>
-      <Topnav />
+      <Topnav v-if="fullWidth<1200"/>
       <div class="banner">
         <h1>Moji-UI</h1>
         <h1>Design</h1>
@@ -54,10 +54,25 @@ export default {
     Topnav,
   },
   data() {
-    return {};
+    return {
+       fullWidth:document.documentElement.clientWidth
+
+    };
   },
-  computed: {},
+  computed: {
+
+  },
   methods: {},
+  setup() {
+    const fullWidth=document.documentElement.clientWidth
+    console.log(document.documentElement);
+    console.log(fullWidth<1200);
+  
+    return {
+     fullWidth
+    }
+  }
+
 };
 </script>
 
@@ -294,6 +309,7 @@ $color: #007974;
     visibility: hidden;
   }
 }
+
 
 
 

@@ -6,6 +6,7 @@
         <svg class="icon" aria-hidden="true">
           <use xlink:href="#icon-huaban"></use>
         </svg>
+        <p>moji-desgin</p>
       </router-link>
       <ul class="menu">
         <li>
@@ -49,12 +50,17 @@ export default {
   computed: {},
   methods: {},
 };
+
+
 </script>
 
 <style lang="scss" scoped>
 //@import url()
 $color: #007974;
 .topnav {
+      border-bottom: 1px solid;
+    background: #fff;
+   box-shadow: 0 3px 3px #c6f5ff;
   color: $color;
   display: flex;
   padding: 16px;
@@ -64,12 +70,20 @@ $color: #007974;
   width: 100%;
   z-index: 20;
   > .logo {
-    max-width: 6em;
+    display: flex;
+    max-width: 15em;
     margin-right: auto;
     > svg {
       width: 32px;
       height: 32px;
     }
+    p{
+      font-size: 18px;
+      font-weight: 700;
+      margin-left: 10px;
+      color: #283e70;
+    }
+    
   }
   > .menu {
     display: flex;
